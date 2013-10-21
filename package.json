@@ -1,0 +1,11 @@
+{
+  "name": "tabs-to-spaces",
+  "version": "0.0.1",
+  "repo": "stephenmathieson/tabs-to-spaces.c",
+  "description": "CLI for converting tabs to spaces",
+  "keywords": [
+    "tabs", "spaces", "convert"
+  ],
+  "license": "MIT",
+  "install": "make install"
+}
