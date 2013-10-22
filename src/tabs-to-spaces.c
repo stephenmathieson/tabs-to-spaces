@@ -17,6 +17,7 @@ char *tabs_to_spaces(char *str, int count) {
     spaces[i] = ' ';
   }
   char *result = str_replace(str, "\t", spaces);
+  free(spaces);
   return result;
 }
 
