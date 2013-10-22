@@ -1,4 +1,3 @@
-
 # tabs-to-spaces
 
   Convert tabs to spaces
@@ -7,7 +6,7 @@
 
   Install with [clib(1)](https://github.com/clibs/clib):
 
-    $ clib install stephenmathieson/tabs-to-spaces.c
+    $ clib install stephenmathieson/tabs-to-spaces
 
 ## API
 
