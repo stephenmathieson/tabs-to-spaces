@@ -25,7 +25,8 @@ static struct options opts;
  * Activate verbose output
  */
 
-static void set_verbose(command_t *self) {
+static void
+set_verbose(command_t *self) {
   opts.verbose = true;
 }
 
@@ -33,7 +34,8 @@ static void set_verbose(command_t *self) {
  * Set number of spaces
  */
 
-static void set_spaces(command_t *self) {
+static void
+set_spaces(command_t *self) {
   opts.spaces = atoi(self->arg);
 }
 
@@ -41,7 +43,8 @@ static void set_spaces(command_t *self) {
  * Convert the file at `path` to spaces
  */
 
-static int convert_file(char *path) {
+static int
+convert_file(char *path) {
   if (opts.verbose) printf("converting %s\n", path);
 
   FILE *fp = fopen(path, "r");
@@ -84,7 +87,8 @@ static int convert_file(char *path) {
  * Entry point
  */
 
-int main(int argc, char **argv){
+int
+main(int argc, char **argv){
   opts.spaces = 2;
   command_t cmd;
   command_init(&cmd, argv[0], "0.0.1");
