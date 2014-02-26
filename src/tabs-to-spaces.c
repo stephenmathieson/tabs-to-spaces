@@ -11,7 +11,7 @@
 #include "tabs-to-spaces.h"
 
 char *
-tabs_to_spaces(char *str, int count) {
+tabs_to_spaces(const char *str, int count) {
   char *spaces = (char *) malloc((sizeof(char) * count) + 1);
   if (NULL == spaces) return NULL;
   for (int i = 0; i < count; i++) spaces[i] = ' ';

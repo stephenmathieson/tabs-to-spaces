@@ -7,9 +7,10 @@
 //
 
 
-#ifndef TABS_TO_SPACES
-#define TABS_TO_SPACES
+#ifndef TABS_TO_SPACES_H
+#define TABS_TO_SPACES_H 1
 
-char *tabs_to_spaces(char *str, int count);
+char *
+tabs_to_spaces(const char *, int);
 
 #endif

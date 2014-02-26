@@ -44,7 +44,7 @@ set_spaces(command_t *self) {
  */
 
 static int
-convert_file(char *path) {
+convert_file(const char *path) {
   if (opts.verbose) printf("converting %s\n", path);
 
   FILE *fp = fopen(path, "r");

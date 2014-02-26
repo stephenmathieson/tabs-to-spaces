@@ -11,7 +11,7 @@
 
 ## API
 
-### `char *tabs_to_spaces(char *str, int count)`
+### `char *tabs_to_spaces(const char *str, int count)`
 
   Convert tabs to `count` spaces in `str`
 
