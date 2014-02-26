@@ -24,7 +24,6 @@ clean:
 	rm -f $(OBJS)
 	rm -f $(BIN)
 
-
 install: $(BIN)
 	cp -f $(BIN) $(PREFIX)/bin/$(BIN)
 
