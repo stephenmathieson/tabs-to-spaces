@@ -74,6 +74,7 @@ convert_file(const char *path) {
 
   size_t len = strlen(spaces);
   if (len != fwrite(spaces, 1, len, fp)) {
+    free(spaces);
     return -1;
   }
 
@@ -89,7 +90,9 @@ convert_file(const char *path) {
 
 int
 main(int argc, char **argv){
+  int rc = 1;
   opts.spaces = 2;
+
   command_t cmd;
   command_init(&cmd, argv[0], "0.0.1");
   command_option(&cmd
@@ -105,13 +108,12 @@ main(int argc, char **argv){
   command_parse(&cmd, argc, argv);
 
   for (int i = 0; i < cmd.argc; ++i) {
-    char *file = cmd.argv[i];
-    if (-1 == convert_file(file)) {
-      return -1;
-    }
+    if (-1 == convert_file(cmd.argv[i])) goto cleanup;
   }
 
-  command_free(&cmd);
+  rc = 0;
 
-  return 0;
+cleanup:
+  command_free(&cmd);
+  return rc;
 }
