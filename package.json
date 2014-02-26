@@ -1,6 +1,6 @@
 {
   "name": "tabs-to-spaces",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "repo": "stephenmathieson/tabs-to-spaces",
   "description": "CLI for converting tabs to spaces",
   "keywords": ["tabs", "spaces", "convert"],
