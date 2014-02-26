@@ -7,7 +7,7 @@
 //
 
 #include <stdlib.h>
-#include "str-replace.h"
+#include "str-replace/str-replace.h"
 #include "tabs-to-spaces.h"
 
 char *

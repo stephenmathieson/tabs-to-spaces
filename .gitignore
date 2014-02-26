@@ -1,2 +1,4 @@
 test
 t2s
+*.o
+deps/

@@ -10,7 +10,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <stdlib.h>
-#include "commander.h"
+#include "commander/commander.h"
 #include "tabs-to-spaces.h"
 
 // global options
@@ -92,8 +92,16 @@ main(int argc, char **argv){
   opts.spaces = 2;
   command_t cmd;
   command_init(&cmd, argv[0], "0.0.1");
-  command_option(&cmd, "-v", "--verbose", "enable verbose stuff", set_verbose);
-  command_option(&cmd, "-s", "--spaces [count]", "optional number of spaces (defaults to 2)", set_spaces);
+  command_option(&cmd
+    , "-v"
+    , "--verbose"
+    , "enable verbose stuff"
+    , set_verbose);
+  command_option(&cmd
+    , "-s"
+    , "--spaces [count]"
+    , "optional number of spaces (defaults to 2)"
+    , set_spaces);
   command_parse(&cmd, argc, argv);
 
   for (int i = 0; i < cmd.argc; ++i) {

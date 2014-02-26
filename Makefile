@@ -1,17 +1,34 @@
 
+CC ?= gcc
+
 PREFIX ?= /usr/local
+BIN    ?= t2s
 
-test: test.c src/tabs-to-spaces.c src/str-replace.c src/str-copy.c
-	$(CC) -std=c99 $^ -o $@
-	./$@
+SRC  = $(wildcard src/*.c)
+SRC += $(wildcard deps/*/*.c)
+OBJS = $(filter-out src/main.o, $(SRC:.c=.o))
 
-t2s: src/*.c
-	$(CC) -std=c99 $^ -o $@
+CFLAGS = -std=c99 -Wall -Wextra -Ideps
 
-install: t2s
-	cp -f t2s $(PREFIX)/bin/t2s
+test: test.c $(OBJS)
+	$(CC) $^ -o $@ $(CFLAGS)
+	./test
+
+$(BIN): src/main.o $(OBJS)
+	$(CC) $^ -o $@ $(CFLAGS)
+
+%.o: %.c
+	$(CC) $< -c -o $@ $(CFLAGS)
+
+clean:
+	rm -f $(OBJS)
+	rm -f $(BIN)
+
+
+install: $(BIN)
+	cp -f $(BIN) $(PREFIX)/bin/$(BIN)
 
 uninstall:
-	rm -f $(PREFIX)/bin/t2s
+	rm -f $(PREFIX)/bin/$(BIN)
 
-.PHONY: test
+.PHONY: test clean install uninstall

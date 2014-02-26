@@ -3,9 +3,12 @@
   "version": "0.0.2",
   "repo": "stephenmathieson/tabs-to-spaces",
   "description": "CLI for converting tabs to spaces",
-  "keywords": [
-    "tabs", "spaces", "convert"
-  ],
+  "keywords": ["tabs", "spaces", "convert"],
   "license": "MIT",
-  "install": "make install"
+  "install": "make install",
+  "uninstall": "make uninstall",
+  "dependencies": {
+    "commander": "1.3.2",
+    "stephenmathieson/str-replace.c": "0.0.4"
+  }
 }
